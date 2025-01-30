@@ -15,17 +15,21 @@ def dibuja_tablero(simbolos:dict):
     ---------
     {simbolos['7']} | {simbolos['8']} | {simbolos['9']}
     ''')
- 
+
+def ia(simbolos:dict):
+    '''
+    Estrategia d ela computadora
+    '''
+    ocupado = True
+    while ocupado is True:
+        x = random.choice(list(simbolos.keys()))
+        if simbolos[x] not in ['X', 'O']:
+            simbolos[x] = 'O'
+            ocupado = False
+
 if __name__ == '__main__':
     numeros = [str(i) for i in range(1,10)]
     dsimbolos = {x:x for x in numeros}
     dibuja_tablero(dsimbolos)
-    x = random.choice(numeros)
-    dsimbolos[x] = 'X'
-    numeros.remove(x)
+    ia(dsimbolos)
     dibuja_tablero(dsimbolos)
-    o = random.choice(numeros)
-    dsimbolos[o] = 'O'
-    numeros.remove(o)
-    dibuja_tablero(dsimbolos)
-    print(numeros)
