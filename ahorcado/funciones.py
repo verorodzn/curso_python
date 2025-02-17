@@ -22,7 +22,11 @@ def carga_plantillas(nombre_plantilla:str)->dict:
         plantillas[i] = carga_archivo_texto(f'./ahorcado/plantillas/{nombre_plantilla}-{i}.txt')
     return plantillas
 
+        plantillas[i] = carga_archivo_texto(f'./ahorcado/plantillas/{nombre_plantilla}-{i}.txt')
+    return plantillas
+
 def despliega_plantilla(diccionario:dict, nivel:int):
+    '''
     '''
     Despliega una plantilla del juego
     '''
